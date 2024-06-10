@@ -8,3 +8,25 @@
   margin: 0;
   padding: 0;
 }
+
+html,
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pixel {
+  min-width: 40px;
+  min-height: 40px;
+  border: 1px solid black;
+  flex: 1 0 6.25%;
+}
