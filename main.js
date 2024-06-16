@@ -30,8 +30,17 @@ function generateGrid(n) {
 
 function hover(cell) {
   cell.addEventListener("mouseover", function () {
-    cell.style.backgroundColor = "black";
+    cell.style.backgroundColor = randomizeColor();
   });
+}
+
+function randomizeColor() {
+  let hexValues = "0123456789ABCDEF";
+  let fullValue = "#";
+  for (let i = 0; i < 6; i++) {
+    fullValue += hexValues[Math.floor(Math.random() * 16)];
+  }
+  return fullValue;
 }
 
 button.addEventListener("click", generateGrid);
