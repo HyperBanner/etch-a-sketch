@@ -2,6 +2,9 @@ const button = document.querySelector("button");
 const container = document.querySelector(".container");
 
 function generateGrid(n) {
+  if (container.children.length !== 0) {
+    container.innerHTML = "";
+  }
   n = Math.floor(
     +prompt("Type in grid size: (Only works with positive integers, max 100)")
   );
