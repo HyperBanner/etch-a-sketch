@@ -1,15 +1,20 @@
-function main(gridSize) {
-  for (let i = 0; i < gridSize; i++) {
-    for (let j = 0; j < gridSize; j++) {
-      let pixel = document.createElement("div");
-      pixel.setAttribute("class", "pixel");
-      document.querySelector(".container").appendChild(pixel);
+const button = document.querySelector("button");
+const container = document.querySelector(".container");
 
-      pixel.addEventListener("mouseenter", () => {
-        pixel.setAttribute("style", "background-color: black");
-      });
+function generateGrid(n) {
+  n = +prompt("Grid Size:");
+
+  for (let rows = 0; rows < n; rows++) {
+    let row = document.createElement("div");
+    row.className = "row";
+
+    for (let cells = 0; cells < n; cells++) {
+      let cell = document.createElement("div");
+      cell.className = "cell";
+      row.appendChild(cell);
     }
+    container.appendChild(row);
   }
 }
 
-main(16);
+button.addEventListener("click", generateGrid);
