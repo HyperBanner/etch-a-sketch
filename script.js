@@ -65,8 +65,7 @@ function getInput() {
 
 setGridBtn.addEventListener("click", () => {
   clearGrid();
-  let n = getInput();
-  createGrid(n);
+  createGrid(getInput());
 });
 
 createGrid(16);
